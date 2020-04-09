@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and After DIV</title>
+    <style>
+        #mainDiv {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            border: 2px solid black;
+            padding: 20px;
+            background: grey;
+        }
+
+        #before_div {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            border: 2px solid red;
+            padding: 20px;
+            background: lightgrey;
+        }
+
+        #after_div {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            border: 2px solid green;
+            padding: 20px;
+            background: lightsalmon;
+        }
+
+        button {
+            border: 5px solid white;
+            border-radius: 5px;
+            padding: 10px;
+            background: black;
+            color: white;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="mainDiv">
+        This is the div. It has some text also. This div is created. Anything in this div is the div
+        <br><br>
+        <button id="before_btn">Insert Before</button>
+        <button id="after_btn">Insert After</button>
+    </div>
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+    <script>
+
+        $("#before_btn").click(function () {
+            var divClone = $("#mainDiv").clone();
+            var before_div = divClone.insertBefore("#mainDiv");
+            before_div.attr("id","before_div");
+            before_div.text("This is Before Div");
+            $(this).prop("disabled",true);
+        });
+
+        $("#after_btn").click(function () {
+            var divClone = $("#mainDiv").clone();
+            var after_div = divClone.insertAfter("#mainDiv");
+            after_div.attr("id","after_div");
+            after_div.text("This is After Div");
+            $(this).prop("disabled",true);
+        });
+        
+
+    </script>
+</body>
+</html>

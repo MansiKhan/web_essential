@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Div</title>
+</head>
+<body>
+    <button onclick="createDiv()" id="createDiv">Create Div</button>
+    <button onclick="changeColor()" style="display: none;" id="changeColor">Change Color</button>
+    <p id="p1">Already Presented Paragraph</p>
+    <script>
+
+        function createDiv() {
+            var node = document.createElement("div");
+            var nodeText = document.createTextNode("This is newly appended div through pure Javascript");
+            node.appendChild(nodeText);
+            document.getElementById("p1").append(node);
+            document.getElementById("changeColor").style.display = "inline";
+            document.getElementById("createDiv").style.display = "none";
+        }
+
+        function changeColor() {
+            document.getElementsByTagName("div")[0].style.background = "green";
+        }
+
+
+    </script>
+</body>
+</html>

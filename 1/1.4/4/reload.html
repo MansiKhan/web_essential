@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reload Through Javascript</title>
+</head>
+<body>
+    <button>Reload</button>
+
+    <script>
+
+        var button = document.getElementsByTagName("button")[0];
+        button.addEventListener("click", function () {
+            location.reload();
+        });
+
+    </script>
+</body>
+</html>
